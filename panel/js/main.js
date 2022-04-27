@@ -18,8 +18,8 @@ $(function () {
 			//Se o menu estiver fechado:
 			$('.menu').css('display','block');
 			$('.menu').animate({width:'15%'}, 1);
-			$('.content, header').animate({width:'85%'}, 1000);
-			$('.content, header').animate({left:'15%'});
+			$('.content, header').animate({left:'15%'}, 1050);
+			$('.content, header').animate({width:'85%'}, 900);
 				open = true;
 
 		}

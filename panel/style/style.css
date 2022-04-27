@@ -131,7 +131,6 @@ header{
 	width: 50%;
 	margin-top: 25px;
 	border-radius: 50%;
-	border: 2px solid black;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -271,14 +270,7 @@ header{
 	}
 
 	.box-user{
-	width: 50%;
-	margin-top: 25px;
-	padding: 15px 35px;
-	border-radius: 50%;
-	border: 1px solid black;
-	display: flex;
-    align-items: center;
-    flex-direction: column;
+		border: none;
 	}
 
 	.menu-wrap{
@@ -298,6 +290,24 @@ header{
 
 	.user-name > p.cargo{
 	font-size: 12px;
+	}
+
+	.menu-items h2{
+		text-align: left;
+		font-weight: bold;
+		font-size: 12px;
+		background: black;
+		color: white;
+		padding: 10px;
+	}
+	
+	.menu-items a{
+		display: block;
+		padding: 10px;
+		font-size: 11px;
+		text-decoration: none;
+		color: white;
+		border-bottom: 1px solid black;
 	}
 }
 
