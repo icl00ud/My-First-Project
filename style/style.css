@@ -1,0 +1,504 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+
+/**Boot CSS**/
+
+html, body{
+	height: 100%;
+}
+
+body{
+	overflow-x: hidden;
+}
+
+img{
+	width: 100%;
+}
+
+.center{
+	max-width: 1280px;
+	padding: 0 10px;
+	margin: 0 auto;
+
+}
+
+.w33{
+	padding: 0 10px ;
+	width: 33.3%;
+}
+
+.w50{
+	padding: 0 2%;
+	width: 50%;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+.clear{
+	clear: both;
+}
+
+/**Estilizacao do site**/
+
+header{
+	padding: 15px 15px;
+	background-color: rgba(0, 0, 0, 0.95);
+}
+
+header .logo{
+	top: 15px;
+	max-width: 500px;
+}
+
+.logo a{
+	text-decoration: none;
+	color: 	white;
+}
+
+.logo img{
+	width: 100%;
+}
+
+.mobile{
+	display: none;
+	width: 100%;
+}
+
+.mobile ul{
+	list-style-type: none;
+	margin-top: 15px;
+}
+
+.mobile li{
+	border-bottom: 1px solid black;
+	background-color: rgba(255, 255, 255, 0.8);
+	font-size: 18px;
+	text-align: center;
+	color: white;
+	padding: 18px;
+}
+
+.mobile a{
+	text-decoration: none;
+	transition: 1s;
+	color: black;
+}
+
+div.cabecalho {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+nav.mobile a:hover{
+	color: grey;
+}
+
+nav.desktop ul{
+	list-style-type: none;
+}
+
+nav.desktop li{
+	font-weight: 300;
+	font-size: 18px;
+	padding: 0 30px;
+	text-transform: uppercase;
+	display: inline-block;
+}
+
+nav.desktop a{
+	transition: 1s;
+	color: white;
+	text-decoration: none;
+}
+
+nav.desktop a:hover{
+	color: grey;
+}
+
+section.banner-container{
+	width: 100%;
+	height: 600px;
+	position: relative;
+}
+
+.banner-single{
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+}
+
+.overlay{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	background-color: rgba(51, 51, 51, 0.6);
+}
+
+section.banner-container form {
+	width: 85%;
+	max-width: 600px;
+	z-index: 3;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+}
+
+section.banner-container form h2{
+	color: white;
+	font-weight: 300;
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+section.banner-container form input[type=email]{
+	width: 100%;
+	height: 60px;
+	background-color: rgba(0, 0, 0, 0.75);
+	border: 0;
+	color: white;
+	font-size: 22px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+section.banner-container form input[type=submit]{
+
+	width: 100%;
+	height: 45px;
+		background-color: rgba(0, 0, 0, 0.5);
+	border: 0;
+	font-size: 22px;
+	cursor: pointer;
+	margin-top: 15px;
+}
+
+section.banner-container form input[value=Cadastrar]{
+	transition: 1s;
+	color: white;
+}
+
+section.banner-container form input[value=Cadastrar]:hover{
+	color: rgba(0, 0, 0, 0.5);
+}
+
+section.descricao-autor{
+	padding: 4% 0;
+	background-color: rgba(152, 152, 152, 0.15);
+}
+
+section.descricao-autor h2{
+	font-size: 28px;
+	font-weight: 500;
+	color: black;
+}
+
+section.descricao-autor p{
+	font-size: 19px;
+	color: black;
+	margin-top: 15px;
+}
+
+
+section.especialidades{
+	padding: 45px 0;
+	background-color: rgba(152, 152, 152, 0.56);
+}
+
+section.especialidades h2.title{
+	position: relative;
+	bottom: 25px;
+	font-size: 45px;
+	font-weight: 500;
+	color: black;
+	text-align: center;
+}
+
+section.especialidades p{
+		color: black;
+}
+
+section.especialidades box-especialidade{
+	margin: 20px 0;
+	padding: 0 30px;
+	text-align: center;
+}
+
+section.especialidades .box-especialidade h4{
+	text-align: center;
+	color: black;
+	font-size: 40px;
+	font-weight: 300;
+}
+
+section.especialidades .box-especialidade h3{
+	text-align: center;
+	color: darkblue;
+	font-size: 85px;
+}
+
+section.extras{
+	padding: 30px;
+	background-color: rgba(152, 152, 152, 0.15);
+}
+
+section.extras h2{
+	font-size: 30px;
+	margin-bottom: 2.5%;
+}
+
+section.extras .depoimentos-container,.servicos-container{
+	padding: 0 2%;
+	color: black;
+	font-weight: 500;
+}
+
+section.extras .servicos-container li{
+	margin-bottom: 3%;
+	list-style-position: inside;
+}
+
+section.extras p.nome-autor{
+	margin-top: -8%;
+	font-size: 16px;
+	border-bottom: 1px solid white;
+	font-weight: bold;
+}
+
+section.extras p,li{
+	text-align: left;
+	font-size: 18px;
+	padding: 5%;
+}
+
+div.error404{
+	height: 82.2%;
+	width: 100%;
+	min-height: 837px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(152, 152, 152, 0.10);
+}
+
+div.dead h1{
+	font-size: 54px;
+	text-align: center;
+	position: relative;
+	top: -100px;
+}
+
+div.error404 h1.doesnot-exist{
+	text-align: center;
+	font-size: 48px;
+	margin-bottom: 20px;
+}
+
+div.error404 p.border{
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+div.error404 a, div.error404 p{
+	transition: 1s;
+	padding-top: 15px;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+div.error404 a:hover{
+	color: grey;
+}
+
+div.error404.p i.fa-solid{
+	margin-left: 20px;
+}
+
+footer{
+	width: 100%;
+	bottom: 0;
+	background-color: rgba(152, 152, 152, 0.56);
+	text-align: center;
+	padding: 30px;
+	font-size: 17px;
+	font-weight: 400;
+}
+
+#map{
+	width: 100%;
+	height: 500px;
+}
+
+.contato-container{
+	padding: 30px 0;
+	text-align: center;
+	background-color: rgba(152, 152, 152, 0.10);
+}
+
+.contato-container textarea{
+	font-size: 18px;
+	width: 50%;
+	height: 150px;
+	padding-left: 15px;
+	padding-top: 10px;
+	resize: vertical;
+	border-style: none;
+	margin-top: 15px;
+	transition: 1s;
+}
+
+.contato-container textarea:hover{
+	background-color: rgba(152, 152, 152, 0.10);
+}
+
+.contato-container input[type="text"]{
+	font-size: 16px;
+	border-style: none;
+	width: 50%;
+	height: 40px;
+	padding: 15px;
+	margin-top: 15px;
+	transition: 1s;
+}
+
+.contato-container input[type="text"]:hover{
+	background-color: rgba(152, 152, 152, 0.10);
+}
+
+.contato-container input[type="submit"]{
+	width: 25%;
+	height: 45px;
+	font-size: 20px;
+	margin-top: 15px;
+	background-color: white;
+	border-style: none;
+	transition: 1s;
+	cursor: pointer;
+}
+
+.contato-container input[type="submit"]:hover{
+	background-color: grey;
+}
+
+.bullets{
+	z-index: 5;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	position: absolute;
+}
+
+.bullets span{
+	display: inline-block;
+	margin-right: 10px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.bullets span.active-slider{
+	background: black;
+}
+
+
+
+@media screen and (max-width: 1000px){
+	.w50{
+		padding: 20px;
+		width: 100%;
+	}
+
+	img{
+		float: none !important;
+		display: block;
+		margin: 0 auto;
+		max-width: 3500px;
+	}
+}
+
+@media screen and (max-width: 800px){
+	nav.desktop{
+		display: none;
+	}
+
+	nav.mobile{
+		display: block;
+	}
+
+	.botao-menu-mobile{
+		top: 40px;
+		font-size: 30px;
+		cursor: pointer;
+		color: white;
+		text-align: right;
+		right: 25px;
+		position: absolute;
+	}
+
+	nav.mobile ul{
+		display: none;
+		background: white;
+		color: white;
+	}
+
+	header .logo{
+		padding-bottom: 20px;
+		position: relative;
+		top: 15px;
+	}
+
+	.w33{
+		width: 100%;
+		padding: 20px;
+	}
+
+	section.especialidades .box-especialidade h4{
+	text-align: center;
+	color: black;
+	font-size: 25px;
+	font-weight: 300;
+	}
+
+	section.especialidades .box-especialidade h3{
+	text-align: center;
+	color: darkblue;
+	font-size: 51px;
+	}
+
+	section.especialidades h2.title{
+	font-size: 35px;
+	font-weight: 500;
+	}
+
+	section.login-session form{
+		transition: 1.4s;
+		width: 480px;
+	}
+}

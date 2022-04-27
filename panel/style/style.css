@@ -1,0 +1,303 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+
+html,body{
+	height: 100%;
+	background-color: rgba(152, 152, 152, 0.10);
+}
+
+
+section.login-session img{
+	padding-bottom: 25px;
+}
+
+div.box-login{
+	height: 100%;
+}
+
+section.login-session{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-image: url(../../images/background-login.png);
+}
+
+section.login-session form{
+	width: 550px;
+	padding: 25px 25px;
+}
+
+section.login-session input{
+	transition: 1s;
+	font-weight: bold;
+	font-size: 18px;
+	width: 500px;
+	margin-bottom: 10px;
+	padding: 15px 20px;
+	border: 1px solid black;
+	border-radius: 25px;
+	background-color: white;
+	box-shadow: 10px 10px 10px black;
+}
+
+section.login-session input[name='login-button']{
+	transition: 1s;
+	width: 50%;
+	margin-top: 25px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+section.login-session input[name='email']:hover{
+	background-color: rgba(255,255,255, 0.9);
+}
+
+section.login-session input[name='password']:hover{
+	background-color: rgba(255,255,255, 0.9);
+}
+
+section.login-session input[name='login-button']:hover{
+	background-color: rgba(0,255,255, 0.9);
+}
+
+/* Panel box-error*/
+
+.box-error{
+
+} 
+
+/* Fim pagina login */
+
+header{
+	width: calc(100% - 15%);
+	position: relative;
+	left: 15%;
+	padding: 10px 30px;
+    background-color: rgba(152, 152, 152, 0.30);
+}
+
+.pai-cabecalho{
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.loggout{
+	font-size: 26px;
+}
+
+.loggout i{
+	color: black;
+}
+
+.menu-button{
+	font-size: 26px;
+	cursor: pointer;
+}
+
+.menu-wrap{
+	width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu{
+	position: fixed;
+	left: 0;
+	top: 0;
+	float: left;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    background-color: rgba(152, 152, 152, 1);
+    width: 15%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    transition: 1s;
+}
+
+.box-user{
+	width: 50%;
+	margin-top: 25px;
+	border-radius: 50%;
+	border: 2px solid black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.avatar-user{
+	font-size: 50px;
+	text-align: center;
+}
+
+.image-user img{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.user-name{
+	margin-top: 15px;
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-name > p.name{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.user-name > p.cargo{
+	font-size: 15px;
+}
+
+
+/*Conteúdo do painel*/
+
+.w100{
+	width: 95%;
+}
+
+.w50{
+	width: 47%;
+}
+
+.w33{
+	width: 32%;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+.content{
+	width: calc(100% - 15%);
+	height: calc(100% - 56px);
+	position: relative;
+	left: 15%;
+
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#title-boxes{
+	text-align: center;
+	font-size: 34px;
+	font-weight: bold;
+	margin-bottom: 16px;
+}
+
+.box-content{
+	margin-top: 50px;
+	padding: 15px;
+	background-color: white;
+	box-shadow: 10px 10px rgba(0, 0, 0, 0.7);
+}
+
+.menu-items{
+	margin-top: 30px;
+	width: 100%;
+}
+
+.menu-items h2{
+	text-align: left;
+	font-weight: bold;
+	font-size: 16px;
+	background: black;
+	color: white;
+	padding: 10px;
+}
+
+.menu-items a{
+	display: block;
+	padding: 10px;
+	font-size: 15px;
+	text-decoration: none;
+	color: white;
+	border-bottom: 1px solid black;
+}
+
+.box-metrics{
+	display: flex;
+	justify-content: center;
+    flex-direction: row;
+}
+
+.box-metrics-single{
+	display: flex;
+	justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+	border: 1px solid black;
+	margin: 0px 15px;
+	height: 100px;
+	background-color: white;
+
+}
+
+@media screen and (max-width: 1200px){
+	.menu{
+		display: none;
+		width: 0;
+	}
+
+	.content{
+		width: 100%;
+		left: 0;
+	}
+
+	header{
+		left: 0;
+		width: 100%;
+	}
+
+	.box-user{
+	width: 50%;
+	margin-top: 25px;
+	padding: 15px 35px;
+	border-radius: 50%;
+	border: 1px solid black;
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+	}
+
+	.menu-wrap{
+		width: 100%;
+	}
+
+	.avatar-user{
+	font-size: 24px;
+	text-align: center;
+	}
+
+	.user-name > p.name{
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	}
+
+	.user-name > p.cargo{
+	font-size: 12px;
+	}
+}
+
