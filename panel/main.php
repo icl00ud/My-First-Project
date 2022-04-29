@@ -41,8 +41,10 @@
 				<p class="cargo"><?php echo catchRole($_SESSION['cargo']); ?></p> 
 			</div><!--user-name-->
 			<div class="menu-items">
+				<h2>Página Inicial</h2>
+				<a href="<?php echo INCLUDE_PATH_PANEL ?>">Home</a>
 				<h2>Gestão</h2>
-				<a href="">Listar Depoimentos</a>
+				<a href="<?php echo INCLUDE_PATH_PANEL ?>pages/depoiment-register.php">Listar Depoimentos</a>
 				<a href="">Listar Serviços</a>
 				<h2>Cadastro</h2>
 				<a href="">Cadastrar Depoimento</a>
@@ -75,31 +77,9 @@
 </header>
 
 	<div class="content"><!--Onde vai ficar tudo do painél-->
-		<div class="box-content w100">
-			<h2 id="title-boxes">Control Panel</h2>
+		
+		<?php Panel::loadPage(); ?>
 
-			<div class="box-metrics">
-				<div class="box-metrics-single w33 left">
-					<div class="box-metrics-wrapper">
-						<h2>Usuários Online</h2>
-						<p>723</p>
-					</div><!--box-metrics-wrapper-->
-				</div><!--box-metrics-single-->
-				<div class="box-metrics-single w33 left">
-					<div class="box-metrics-wrapper">
-						<h2>Total de Visitas</h2>
-						<p>3481</p>
-					</div><!--box-metrics-wrapper-->
-				</div><!--box-metrics-single-->
-				<div class="box-metrics-single w33 left">
-					<div class="box-metrics-wrapper">
-						<h2>Visitas Hoje</h2>
-						<p>1897</p>
-					</div><!--box-metrics-wrapper-->
-				</div><!--box-metrics-single-->
-				<div class="clear"></div>
-			</div><!--box-metrics-->
-		</div><!--box-content-->
 	</div><!--content-->
 
 <script src="<?php INCLUDE_PATH?>../js/jquery-3.6.0.min.js"></script>

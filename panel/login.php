@@ -1,4 +1,3 @@
-<?php include('../classes/MySql.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
