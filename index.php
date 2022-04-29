@@ -1,5 +1,6 @@
 <?php include('config.php');?>
 <?php Site::updateUserOnline(); ?>
+<?php Site::count(); ?>
 <!DOCTYPE html>
 <html>
 <head>

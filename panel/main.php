@@ -42,15 +42,15 @@
 			</div><!--user-name-->
 			<div class="menu-items">
 				<h2>Página Inicial</h2>
-				<a href="<?php echo INCLUDE_PATH_PANEL ?>">Home</a>
+				<a href="<?php echo INCLUDE_PATH_PANEL; ?>">Home</a>
 				<h2>Gestão</h2>
-				<a href="<?php echo INCLUDE_PATH_PANEL ?>pages/depoiment-register.php">Listar Depoimentos</a>
+				<a href="<?php echo INCLUDE_PATH_PANEL; ?>pages/depoiment-register.php">Listar Depoimentos</a>
 				<a href="">Listar Serviços</a>
 				<h2>Cadastro</h2>
 				<a href="">Cadastrar Depoimento</a>
 				<a href="">Cadastrar Serviço</a>
 				<h2>Administração do painel</h2>
-				<a href="">Editar Usuário</a>
+				<a href="<?php echo INCLUDE_PATH_PANEL; ?>pages/edit-user.php">Editar Usuário</a>
 				<a href="">Adicionar Usuários</a>
 				<a href="">Listar Slides</a>
 				<h2>Configuração geral</h2>
