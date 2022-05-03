@@ -13,51 +13,9 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="<?php echo INCLUDE_PATH_PANEL ?>style/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo INCLUDE_PATH_PANEL; ?>style/style.css">
 </head>
 <body>
-	<div class="menu">
-		<div class="menu-wrap">
-			<div class="box-user">
-				<?php
-					if ($_SESSION['img'] == '') { 
-				?>	
-				<!--Se o usuário não tiver uma foto, então carregue o ícone-->
-					<div class="avatar-user">
-						<i class="fa-solid fa-user-tie"></i>
-					</div><!--avatar-user-->
-				<?php 
-					}else{ ?> 
-				<!--Se o usuário tem uma foto, então carregue a foto-->
-					<div class="image-user">
-						<img src="<?php echo INCLUDE_PATH_PANEL ?>uploads/<?php echo $_SESSION['img'] ?>">
-					</div><!--image-user-->
-				<?php } ?>
-			</div><!--box-user-->
-			<div class="user-name">
-				<!--Pega o nome da sessão e printa esse nome-->
-				<p class="name"><?php echo $_SESSION['nome']; ?></p> 
-				<!--Existe uma função em config.php que pega o número do cargo no banco de dados e transforma em um texto com o nome do cargo-->
-				<p class="cargo"><?php echo catchRole($_SESSION['cargo']); ?></p> 
-			</div><!--user-name-->
-			<div class="menu-items">
-				<h2>Página Inicial</h2>
-				<a href="<?php echo INCLUDE_PATH_PANEL; ?>">Home</a>
-				<h2>Gestão</h2>
-				<a href="<?php echo INCLUDE_PATH_PANEL; ?>pages/depoiment-register.php">Listar Depoimentos</a>
-				<a href="">Listar Serviços</a>
-				<h2>Cadastro</h2>
-				<a href="">Cadastrar Depoimento</a>
-				<a href="">Cadastrar Serviço</a>
-				<h2>Administração do painel</h2>
-				<a href="<?php echo INCLUDE_PATH_PANEL; ?>pages/edit-user.php">Editar Usuário</a>
-				<a href="">Adicionar Usuários</a>
-				<a href="">Listar Slides</a>
-				<h2>Configuração geral</h2>
-				<a href="">Editar</a>
-			</div><!--menu-items-->
-		</div><!--menu-wrap-->
-	</div><!--menu-->
 
 <header>
 
@@ -75,6 +33,49 @@
 
 
 </header>
+
+	<div class="menu">
+		<div class="menu-wrap">
+			<div class="box-user">
+				<?php
+					if ($_SESSION['img'] == '') { 
+				?>	
+				<!--Se o usuário não tiver uma foto, então carregue o ícone-->
+					<div class="avatar-user">
+						<i class="fa-solid fa-user-tie"></i>
+					</div><!--avatar-user-->
+				<?php 
+					}else{ ?> 
+				<!--Se o usuário tem uma foto, então carregue a foto-->
+					<div class="image-user">
+						<img src="<?php echo INCLUDE_PATH_PANEL; ?>uploads/<?php echo $_SESSION['img'] ?>">
+					</div><!--image-user-->
+				<?php } ?>
+			</div><!--box-user-->
+			<div class="user-name">
+				<!--Pega o nome da sessão e printa esse nome-->
+				<p class="name"><?php echo $_SESSION['nome']; ?></p> 
+				<!--Existe uma função em config.php que pega o número do cargo no banco de dados e transforma em um texto com o nome do cargo-->
+				<p class="cargo"><?php echo catchRole($_SESSION['cargo']); ?></p> 
+			</div><!--user-name-->
+			<div class="menu-items">
+				<h2>Página Inicial</h2>
+				<a href="<?php echo INCLUDE_PATH_PANEL; ?>">Home</a>
+				<h2>Gestão</h2>
+				<a <?php selecionadoMenu('list-depoiments'); ?> href="">Listar Depoimentos</a>
+				<a <?php selecionadoMenu('list-services'); ?> href="">Listar Serviços</a>
+				<h2>Cadastro</h2>
+				<a <?php selecionadoMenu('depoiment-register'); ?> href="<?php echo INCLUDE_PATH_PANEL; ?>depoiment-register">Cadastrar Depoimento</a>
+				<a <?php selecionadoMenu('service-register'); ?> href="">Cadastrar Serviço</a>
+				<h2>Administração do painel</h2>
+				<a <?php selecionadoMenu('edit-user'); ?> href="<?php echo INCLUDE_PATH_PANEL; ?>edit-user">Editar Usuário</a>
+				<a <?php selecionadoMenu('add-user'); ?> href="">Adicionar Usuários</a>
+				<a <?php selecionadoMenu('list-slides'); ?> href="">Listar Slides</a>
+				<h2>Configuração geral</h2>
+				<a <?php selecionadoMenu('edit'); ?> href="">Editar</a>
+			</div><!--menu-items-->
+		</div><!--menu-wrap-->
+	</div><!--menu-->
 
 	<div class="content"><!--Onde vai ficar tudo do painél-->
 		

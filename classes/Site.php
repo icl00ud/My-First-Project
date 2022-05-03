@@ -58,8 +58,9 @@
     
     }
 
-    class Panel
-	{
+    class Panel{
+
+
 		public static function logado(){
 			return isset($_SESSION['login']) ? true : false;
 		}
@@ -94,6 +95,52 @@
 			$date = date('Y-m-d H:i:s');
 			$sql = MySql::connect()->exec("DELETE FROM `tb_admin.online` WHERE last_action < '$date' - INTERVAL 1 MINUTE");
 		}
+
+        public static function alert($type,$mensagem){
+            if ($type == 'sucesso') {
+                echo '<div class="sucesso"><i class="fa-solid fa-check"></i> '.$mensagem.'</div></br></br>';
+            }else if ($type == 'erro') {
+                echo '<div class="erro"><i class="fa-solid fa-xmark"></i> '.$mensagem.'</div></br></br>';
+            }
+        }
+
+        public static function imageValid($imagem){
+            if ($imagem['type'] == 'image/jpeg' || $imagem['type'] == 'image/jpg' || $imagem['type'] == 'image/png') {
+                //convertendo o tamanho da imagem para kb
+                $size = intval($imagem['size'] / 1024);
+                if ($size < 10000) { //Apenas imagens com 10mb
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        }
+
+        public static function uploadImage($file){
+            if(move_uploaded_file($file['tmp_name'], BASE_DIR_PANEL.'/uploads/'.$file['name']))
+            return $file['name'];
+        else
+            return false;
+        }
+
+        //função que deleta a imagem antiga e mantém a nova
+        public static function deleteFile($file){
+            @unlink(BASE_DIR_PANEL.'/uploads/'.$file);
+        }
 	}
+
+    class User{
+
+        public function attUser($nome,$password,$img){
+            $sql = MySql::connect()->prepare("UPDATE `tb_admin.users` SET nome = ?, password = ?, img = ? WHERE user = ?");
+            if ($sql -> execute(array($nome,$password,$img,$_SESSION['user']))){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    }
 
 ?>

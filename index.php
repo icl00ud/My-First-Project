@@ -18,7 +18,7 @@
 
 </head>
 <body>
-<base base="<?php INCLUDE_PATH ?>"/>
+<base base="<?php INCLUDE_PATH; ?>"/>
 
 	<?php 
 		$url = isset($_GET['url']) ? $_GET['url'] : 'home';

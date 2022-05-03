@@ -51,7 +51,6 @@
 
 		<?php 
 			foreach ($usersOnline as $key => $value) {
-				# code...
 		?>
 
         <div class="row">

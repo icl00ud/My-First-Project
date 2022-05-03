@@ -277,6 +277,42 @@ header{
 	padding-top: 10px;
 }
 
+/*Edit-user*/
+
+#edit-user{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+#edit-user input{
+	margin-top: 15px;
+	font-size: 16px;
+	padding: 8px 8px;
+	width: auto;
+}
+
+#edit-user label{
+	margin-right: 10px;
+}
+
+.erro{
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: -35px;
+	font-weight: bold;
+	color: red;
+}
+
+.sucesso{
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: -35px;
+	font-weight: bold;
+	color: green;
+}
+
 @media screen and (max-width: 1200px){
 	.menu{
 		display: none;

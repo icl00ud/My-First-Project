@@ -7,6 +7,7 @@
 	
 	define('INCLUDE_PATH','http://localhost/Projeto_01/');
 	define('INCLUDE_PATH_PANEL', INCLUDE_PATH.'panel/');
+	define('BASE_DIR_PANEL', __DIR__.'/panel');
 
 	//Conectar ao servidor
 	define('HOST', 'localhost');
