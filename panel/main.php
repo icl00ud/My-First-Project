@@ -5,6 +5,7 @@
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Control Panel</title>
 	<meta charset="utf-8">
@@ -15,75 +16,92 @@
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="<?php echo INCLUDE_PATH_PANEL; ?>style/style.css">
 </head>
+
 <body>
 
-<header>
+	<header>
 
-<div class="pai-cabecalho">
-	<div class="menu-button">
-		<i class="fa-solid fa-bars"></i>
-	</div>
+		<div class="pai-cabecalho">
+			<div class="menu-button">
+				<i class="fa-solid fa-bars"></i>
+			</div>
 
-	<div class="loggout">
-		<a href="<?php echo INCLUDE_PATH_PANEL;?>?loggout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
-	</div> <!--loggout-->
-</div> <!--pai-cabecalho-->
+			<div class="loggout">
+				<a href="<?php echo INCLUDE_PATH_PANEL;?>?loggout"><i
+						class="fa-solid fa-arrow-right-from-bracket"></i></a>
+			</div>
+			<!--loggout-->
+		</div>
+		<!--pai-cabecalho-->
 
-	<div class="clear"></div>
+		<div class="clear"></div>
 
 
-</header>
+	</header>
 
 	<div class="menu">
 		<div class="menu-wrap">
 			<div class="box-user">
 				<?php
 					if ($_SESSION['img'] == '') { 
-				?>	
+				?>
 				<!--Se o usuário não tiver uma foto, então carregue o ícone-->
-					<div class="avatar-user">
-						<i class="fa-solid fa-user-tie"></i>
-					</div><!--avatar-user-->
+				<div class="avatar-user">
+					<i class="fa-solid fa-user-tie"></i>
+				</div>
+				<!--avatar-user-->
 				<?php 
-					}else{ ?> 
+					}else{ ?>
 				<!--Se o usuário tem uma foto, então carregue a foto-->
-					<div class="image-user">
-						<img src="<?php echo INCLUDE_PATH_PANEL; ?>uploads/<?php echo $_SESSION['img'] ?>">
-					</div><!--image-user-->
+				<div class="image-user">
+					<img src="<?php echo INCLUDE_PATH_PANEL; ?>uploads/<?php echo $_SESSION['img'] ?>">
+				</div>
+				<!--image-user-->
 				<?php } ?>
-			</div><!--box-user-->
+			</div>
+			<!--box-user-->
 			<div class="user-name">
 				<!--Pega o nome da sessão e printa esse nome-->
-				<p class="name"><?php echo $_SESSION['nome']; ?></p> 
+				<p class="name"><?php echo $_SESSION['nome']; ?></p>
 				<!--Existe uma função em config.php que pega o número do cargo no banco de dados e transforma em um texto com o nome do cargo-->
-				<p class="cargo"><?php echo catchRole($_SESSION['cargo']); ?></p> 
-			</div><!--user-name-->
+				<p class="cargo"><?php echo catchRole($_SESSION['cargo']); ?></p>
+			</div>
+			<!--user-name-->
 			<div class="menu-items">
 				<h2>Página Inicial</h2>
 				<a href="<?php echo INCLUDE_PATH_PANEL; ?>">Home</a>
 				<h2>Gestão</h2>
-				<a <?php selecionadoMenu('list-depoiments'); ?> href="">Listar Depoimentos</a>
-				<a <?php selecionadoMenu('list-services'); ?> href="">Listar Serviços</a>
+				<a <?php selectedMenu('list-depoiments'); ?> href="">Listar Depoimentos</a>
+				<a <?php selectedMenu('list-services'); ?> href="">Listar Serviços</a>
 				<h2>Cadastro</h2>
-				<a <?php selecionadoMenu('depoiment-register'); ?> href="<?php echo INCLUDE_PATH_PANEL; ?>depoiment-register">Cadastrar Depoimento</a>
-				<a <?php selecionadoMenu('service-register'); ?> href="">Cadastrar Serviço</a>
+				<a <?php selectedMenu('depoiment-register'); ?>
+					href="<?php echo INCLUDE_PATH_PANEL; ?>depoiment-register">Cadastrar Depoimento</a>
+				<a <?php selectedMenu('service-register'); ?> href="">Cadastrar Serviço</a>
 				<h2>Administração do painel</h2>
-				<a <?php selecionadoMenu('edit-user'); ?> href="<?php echo INCLUDE_PATH_PANEL; ?>edit-user">Editar Usuário</a>
-				<a <?php selecionadoMenu('add-user'); ?> href="">Adicionar Usuários</a>
-				<a <?php selecionadoMenu('list-slides'); ?> href="">Listar Slides</a>
+				<a <?php selectedMenu('edit-user'); ?> href="<?php echo INCLUDE_PATH_PANEL; ?>edit-user">Editar
+					Usuário</a>
+				<a <?php selectedMenu('add-user'); ?> <?php verifyPermissionMenu(2); ?>
+					href="<?php echo INCLUDE_PATH_PANEL; ?>add-user">Adicionar Usuários</a>
+				<a <?php selectedMenu('list-slides'); ?> href="">Listar Slides</a>
 				<h2>Configuração geral</h2>
-				<a <?php selecionadoMenu('edit'); ?> href="">Editar</a>
-			</div><!--menu-items-->
-		</div><!--menu-wrap-->
-	</div><!--menu-->
+				<a <?php selectedMenu('edit'); ?> href="">Editar</a>
+			</div>
+			<!--menu-items-->
+		</div>
+		<!--menu-wrap-->
+	</div>
+	<!--menu-->
 
-	<div class="content"><!--Onde vai ficar tudo do painél-->
-		
+	<div class="content">
+		<!--Onde vai ficar tudo do painél-->
+
 		<?php Panel::loadPage(); ?>
 
-	</div><!--content-->
+	</div>
+	<!--content-->
 
-<script src="<?php INCLUDE_PATH?>../js/jquery-3.6.0.min.js"></script>
-<script src="<?php INCLUDE_PATH_PANEL?>js/main.js"></script>
+	<script src="<?php INCLUDE_PATH?>../js/jquery-3.6.0.min.js"></script>
+	<script src="<?php INCLUDE_PATH_PANEL?>js/main.js"></script>
 </body>
+
 </html>

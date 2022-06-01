@@ -17,15 +17,34 @@
 	
 	//Constantes para o painel de controle
 	define('BUSINESS_NAME', 'Business Name');
-
+	
 	//Funções
-	function catchRole($cargo){
-		$arr = [
-			'0' => 'Normal',
-			'1' => 'Sub-admin',
-			'2' => 'Admin'
-		];
+	function catchRole($indice){
 
-		return $arr[$cargo];
+		return Panel::$cargos[$indice];
+	}
+
+	function selectedMenu($par){
+		$url = explode('/',@$_GET['url'])[0];
+		if ($url == $par) {
+			echo 'class = "menu-active"';
+		}
+	}
+
+	function verifyPermissionMenu($permission){
+		if ($_SESSION['cargo'] >= $permission) {
+			return;
+		}else{
+			echo 'style="display:none;"';
+		}
+	}
+
+	function verifyPermissionPage($permission){
+		if ($_SESSION['cargo'] >= $permission) {
+			return;
+		}else{
+			include('panel/pages/permission-denied.php');
+			die();
+		}
 	}
 ?>

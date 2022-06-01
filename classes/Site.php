@@ -60,6 +60,11 @@
 
     class Panel{
 
+        public static $cargos = [
+			'0' => 'Normal',
+			'1' => 'Sub-admin',
+			'2' => 'Admin'
+	    ];
 
 		public static function logado(){
 			return isset($_SESSION['login']) ? true : false;
