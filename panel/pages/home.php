@@ -37,7 +37,7 @@
 </div><!--box-content-->
 
 <div class="box-content w100">
-<h2><i class="fa-solid fa-users"></i></i>Usuários online</h2>
+<h2><i class="fa-solid fa-users"></i></i>Usuários online do Site</h2>
     <div class="responsive-table">
         <div class="row">
             <div class="col">
@@ -59,6 +59,41 @@
             </div><!--col-->
             <div class="col">
                 <span><?php echo date('d/m/Y H:i:s',strtotime($value['last_action'])) ?></span>
+            </div><!--col-->
+        </div><!--row-->
+        <div class="clear"></div>
+		<?php 
+		}
+		?>
+    </div><!--responsive-table-->
+</div><!--box-content-w100-->
+
+<div class="box-content w100">
+<h2><i class="fa-solid fa-users"></i></i>Usuários do Painel</h2>
+    <div class="responsive-table">
+        <div class="row">
+            <div class="col">
+                <span>Nome</span>
+            </div><!--col-->
+            <div class="col">
+                <span>Cargo</span>
+            </div><!--col-->
+            <div class="clear"></div>
+        </div><!--row-->
+
+		<?php 
+			$usersPanel = MySql::connect()->prepare("SELECT * FROM `tb_admin.users`");
+			$usersPanel->execute();
+			$usersPanel = $usersPanel->fetchAll();
+			foreach ($usersPanel as $key => $value) {
+		?>
+
+        <div class="row">
+            <div class="col">
+                <span><?php echo $value['user'] ?></span>
+            </div><!--col-->
+            <div class="col">
+                <span><?php echo catchRole($value['cargo']); ?></span>
             </div><!--col-->
         </div><!--row-->
         <div class="clear"></div>

@@ -71,7 +71,7 @@
 				<h2>Página Inicial</h2>
 				<a href="<?php echo INCLUDE_PATH_PANEL; ?>">Home</a>
 				<h2>Gestão</h2>
-				<a <?php selectedMenu('list-depoiments'); ?> href="">Listar Depoimentos</a>
+				<a <?php selectedMenu('list-depoiments'); ?> href="<?php echo INCLUDE_PATH_PANEL; ?>list-depoiments">Listar Depoimentos</a>
 				<a <?php selectedMenu('list-services'); ?> href="">Listar Serviços</a>
 				<h2>Cadastro</h2>
 				<a <?php selectedMenu('depoiment-register'); ?>
@@ -102,6 +102,7 @@
 
 	<script src="<?php INCLUDE_PATH?>../js/jquery-3.6.0.min.js"></script>
 	<script src="<?php INCLUDE_PATH_PANEL?>js/main.js"></script>
+	<script src="<?php INCLUDE_PATH_PANEL?>js/jquery.mask.js"></script>
 </body>
 
 </html>

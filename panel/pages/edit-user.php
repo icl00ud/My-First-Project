@@ -43,10 +43,10 @@
 			<label>Nome:</label>
 			<input type="text" name="nome" value="<?php echo $_SESSION['nome'] ?>" required></br>
 			<label>Senha:</label>
-			<input type="password" name="password" value="<?php echo $_SESSION['password'] ?>" required></br>
+			<input type="password" name="password" value="<?php echo $_SESSION['password'] ?>" required>
 			<label>Imagem:</label>
 			<input type="file" name="imagem"/>
-			<input type="hidden" name="actual_image" value="<?php echo $_SESSION['img'] ?>"></br>
+			<input type="hidden" name="actual_image" value="<?php echo $_SESSION['img'] ?>">
 			
 			<input type="submit" name="editar-usuario" value="Editar">
 		</div>

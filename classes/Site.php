@@ -73,6 +73,7 @@
 		public static function loggout(){
 			session_destroy();
 			header('Location: '.INCLUDE_PATH_PANEL);
+            setcookie('lembrar', 'true', time()-1, '/');
 		}
 
 		public static function loadPage(){
@@ -124,8 +125,10 @@
         }
 
         public static function uploadImage($file){
-            if(move_uploaded_file($file['tmp_name'], BASE_DIR_PANEL.'/uploads/'.$file['name']))
-            return $file['name'];
+            $formatoArquivo = explode('.', $file['name']);
+            $imageName = uniqid().'.'.$formatoArquivo[count($formatoArquivo) - 1];
+            if(move_uploaded_file($file['tmp_name'], BASE_DIR_PANEL.'/uploads/'.$imageName))
+            return $imageName;
         else
             return false;
         }
@@ -133,6 +136,37 @@
         //função que deleta a imagem antiga e mantém a nova
         public static function deleteFile($file){
             @unlink(BASE_DIR_PANEL.'/uploads/'.$file);
+        }
+
+        public static function insert($arr){
+            $true = true;
+            $name_table = $arr['name_table'];
+            $query = "INSERT INTO `$name_table` VALUES (null";
+            foreach ($arr as $key => $value) {
+                $name_colum = $key;
+                $value = $value;
+                if ($name_colum == 'acao' || $name_colum == 'name_table') {
+                    continue;
+                }
+                if ($value == '') {
+                    $true = false;
+                    break;
+                }
+                $query.=",?";
+                $parameters[] = $value;
+            }
+            $query.=")";
+            if ($true == true) {
+                $sql = MySql::connect()->prepare($query);
+                $sql->execute($parameters);
+            }
+            return $true;
+        }
+
+        public static function selectAll($table){
+            $sql = MySql::connect()->prepare("SELECT * FROM `$table`");
+            $sql->execute();
+            return $sql->fetchAll();
         }
 	}
 
@@ -146,6 +180,23 @@
                 return false;
             }
         }
+
+        public static function userExist($user){
+            $sql = MySql::connect()->prepare("SELECT `id` FROM `tb_admin.users` WHERE user=?");
+            $sql -> execute(array($user));
+            if($sql-> rowcount() == 1)
+                return true;
+            else
+                return false;
+            
+        }
+
+        public static function registerUser($user,$password,$img,$nome,$cargo){
+            $sql = MySql::connect()->prepare("INSERT INTO `tb_admin.users` VALUES (null,?,?,?,?,?)");
+            $sql -> execute(array($user,$password,$img,$nome,$cargo));
+        }
     }
+
+
 
 ?>

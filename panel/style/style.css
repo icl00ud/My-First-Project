@@ -36,7 +36,7 @@ section.login-session form {
 	padding: 25px 25px;
 }
 
-section.login-session input {
+section.login-session input{
 	transition: 1s;
 	font-weight: bold;
 	font-size: 18px;
@@ -210,6 +210,35 @@ header {
 	box-shadow: 10px 10px rgba(0, 0, 0, 0.7);
 }
 
+/* Tables */
+
+table{
+	width: 100%;
+	margin: 20px 0;
+	border-collapse: collapse;
+}
+
+table tr:nth-of-type(1){
+	background-color: rgba(152, 152, 152, 1);
+	font-weight: bold;
+	font-size: 1.3rem;
+}
+
+table tr{
+	border: 1px solid black;
+}
+
+table td{
+	padding: 20px;
+}
+
+table a.btn{
+	display: inline-block;
+	text-decoration: none;
+	padding: 0 4px;
+	color: black;
+}
+
 .menu-items {
 	margin-top: 30px;
 	width: 100%;
@@ -307,9 +336,6 @@ header {
 	margin-right: 10px;
 }
 
-#edit-user input[type='submit'] {
-	margin-left: 65px;
-}
 
 .erro {
 	text-align: center;
@@ -334,6 +360,29 @@ header {
 .menu-active::before {
 	content: ">  ";
 }
+
+.form-group{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group-login label{
+	font-size: 18px;
+	color: black;
+	font-weight: 600;
+}
+
+.box-content form textarea{
+	margin-top: 15px;
+    font-size: 16px;
+    padding: 8px 8px;
+    width: 350px;
+	min-height: 150px;
+	resize: vertical;
+}
+
+
 
 @media screen and (max-width: 1200px) {
 	.menu {
